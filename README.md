@@ -2,7 +2,8 @@
 
 Nyancat rendered in your terminal.
 
-[![Nyancats](http://nyancat.dakko.us/nyancat.png)](http://nyancat.dakko.us/nyancat.png)
+![nyancat](https://user-images.githubusercontent.com/73887606/112800280-bce7a780-906f-11eb-89bd-1c634643a895.png)
+
 
 ## Distributions
 
