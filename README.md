@@ -1,20 +1,27 @@
-# Nyancat CLI
+Nyancat CLI
+===========
 
 Nyancat rendered in your terminal.
 
 ![nyancat](nyancat.gif)
 
-## Setup
+Setup
+-----
 
 First build the C application:
 
-    make && cd src
+```console
+$ make && cd src
+```
 
 You can run the C application standalone.
 
-    ./nyancat
+```console
+$ ./nyancat
+```
 
-## Licenses, References, etc.
+Licenses, References, etc.
+--------------------------
 
 The original source of the Nyancat animation is
 [prguitarman](http://www.prguitarman.com/index.php?id=348).
