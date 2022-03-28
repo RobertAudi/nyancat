@@ -18,7 +18,6 @@ $(distdir): FORCE
 	cp src/Makefile $(distdir)/src
 	cp src/nyancat.c $(distdir)/src
 	cp src/animation.c $(distdir)/src
-	cp src/telnet.h $(distdir)/src
 
 FORCE:
 	-rm $(distdir).tar.gz >/dev/null 2>&1
