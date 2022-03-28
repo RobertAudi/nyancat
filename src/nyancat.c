@@ -112,11 +112,6 @@ unsigned int frame_count = 0;
 int clear_screen = 1;
 
 /*
- * Force-set the terminal title.
- */
-int set_title = 1;
-
-/*
  * Environment to use for setjmp/longjmp
  * when breaking out of options handler
  */
@@ -240,7 +235,6 @@ void usage(char * argv[]) {
                         "usage: %s [-hn] [-f \033[3mframes\033[0m]\n"
                         "\n"
                         " -n --no-counter \033[3mDo not display the timer\033[0m\n"
-                        " -s --no-title   \033[3mDo not set the titlebar text\033[0m\n"
                         " -e --no-clear   \033[3mDo not clear the display between frames\033[0m\n"
                         " -d --delay      \033[3mDelay image rendering by anywhere between 10ms and 1000ms\n"
                         " -f --frames     \033[3mDisplay the requested number of frames, then quit\033[0m\n"
@@ -264,7 +258,6 @@ int main(int argc, char ** argv) {
         static struct option long_opts[] = {
                 {"help",       no_argument,       0, 'h'},
                 {"no-counter", no_argument,       0, 'n'},
-                {"no-title",   no_argument,       0, 's'},
                 {"no-clear",   no_argument,       0, 'e'},
                 {"delay",      required_argument, 0, 'd'},
                 {"frames",     required_argument, 0, 'f'},
@@ -291,9 +284,6 @@ int main(int argc, char ** argv) {
                 switch (c) {
                         case 'e':
                                 clear_screen = 0;
-                                break;
-                        case 's':
-                                set_title = 0;
                                 break;
                         case 'h': /* Show help and exit */
                                 usage(argv);
@@ -522,13 +512,6 @@ int main(int argc, char ** argv) {
                 min_row = (FRAME_HEIGHT - (terminal_height-1)) / 2;
                 max_row = (FRAME_HEIGHT + (terminal_height-1)) / 2;
                 using_automatic_height = 1;
-        }
-
-        /* Attempt to set terminal title */
-        if (set_title) {
-                printf("\033kNyanyanyanyanyanyanya...\033\134");
-                printf("\033]1;Nyanyanyanyanyanyanya...\007");
-                printf("\033]2;Nyanyanyanyanyanyanya...\007");
         }
 
         if (clear_screen) {
