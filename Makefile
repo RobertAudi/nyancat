@@ -2,6 +2,7 @@ package = nyancat
 version = 1.6.0
 tarname = $(package)
 distdir = $(tarname)-$(version)
+PREFIX = /usr
 
 all clean check nyancat:
 	cd src && $(MAKE) $@
@@ -32,7 +33,9 @@ distcheck: $(distdir).tar.gz
 	@echo "*** Package $(distdir).tar.gz is ready for distribution."
 
 install: all
-	install src/nyancat /usr/bin/${package}
-	gzip -9 -c < nyancat.1 > /usr/share/man/man1/nyancat.1.gz
+	install -d $(PREFIX)/bin
+	install src/nyancat $(PREFIX)/bin/${package}
+	install -d $(PREFIX)/share/man/man1
+	gzip -9 -c < nyancat.1 > $(PREFIX)/share/man/man1/nyancat.1.gz
 
 .PHONY: FORCE all clean check dist distcheck install
