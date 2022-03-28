@@ -1,3 +1,9 @@
+1.6.0
+    * Make Nyancat smile
+    * Remove the telnet stuff
+    * Remove the intro screen
+    * Remove the option to set the terminal title
+
 1.4.1
     * Fix telnet size negotiation
 
