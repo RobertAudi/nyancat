@@ -38,4 +38,8 @@ install: all
 	install -d $(PREFIX)/share/man/man1
 	gzip -9 -c < nyancat.1 > $(PREFIX)/share/man/man1/nyancat.1.gz
 
-.PHONY: FORCE all clean check dist distcheck install
+uninstall:
+	rm -f $(PREFIX)/bin/${package}
+	rm -f $(PREFIX)/share/man/man1/nyancat.1.gz
+
+.PHONY: FORCE all clean check dist distcheck install uninstall
