@@ -237,7 +237,7 @@ void usage(char * argv[]) {
         printf(
                         "Terminal Nyancat\n"
                         "\n"
-                        "usage: %s [-hitn] [-f \033[3mframes\033[0m]\n"
+                        "usage: %s [-hn] [-f \033[3mframes\033[0m]\n"
                         "\n"
                         " -n --no-counter \033[3mDo not display the timer\033[0m\n"
                         " -s --no-title   \033[3mDo not set the titlebar text\033[0m\n"
